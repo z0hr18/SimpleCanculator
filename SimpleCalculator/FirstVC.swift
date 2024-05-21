@@ -63,9 +63,9 @@ class FirstVC: UIViewController {
     
     func configureUI() {
         [textfieldOne,
-        textfieldTwo,
-        buttonCalculatePostive,
-        buttonCalculateNegative,
+         textfieldTwo,
+         buttonCalculatePostive,
+         buttonCalculateNegative,
          resultLabel,].forEach(view.addSubview)
         
         NSLayoutConstraint.activate([
@@ -95,16 +95,27 @@ class FirstVC: UIViewController {
     }
     
     @objc func sumButtonTapped() {
-        let firstNumber = Int(textfieldOne.text!)!
-        let secondNumber = Int(textfieldTwo.text!)!
+        //        let firstNumber = Int(textfieldOne.text!)!
+        //        let secondNumber = Int(textfieldTwo.text!)!
+        //        let result = firstNumber + secondNumber
+        //        resultLabel.text = String(result)
         
-        let result = firstNumber + secondNumber
-        
-        resultLabel.text = String(result)
-        
+        if let firstNumber = Int(textfieldOne.text!) {
+            if let secondNumber = Int(textfieldTwo.text!) {
+                let result = firstNumber + secondNumber
+                resultLabel.text = String(result)
+            }
+        }
     }
+    
     @objc func minusButtonTapped() {
-        print("tapped")
+        if let firstNumber = Int(textfieldOne.text!) {
+            if let secondNumber = Int(textfieldTwo.text!) {
+                let result = firstNumber - secondNumber
+                resultLabel.text = String(result)
+            }
+        }
     }
+    
 }
 
