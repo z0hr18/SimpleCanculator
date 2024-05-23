@@ -74,6 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B87E04452BFF18B300A6B6D0 /* SimpleCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				B8949FCA2BFA1A530069106C /* FirstVC.swift */,
+			);
+			path = SimpleCalculator;
+			sourceTree = "<group>";
+		};
+		B87E04462BFF18CE00A6B6D0 /* BirthdayNoteTaker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BirthdayNoteTaker;
+			sourceTree = "<group>";
+		};
 		B8949F8E2BFA116F0069106C = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +114,8 @@
 			children = (
 				B8949F9A2BFA116F0069106C /* AppDelegate.swift */,
 				B8949F9C2BFA116F0069106C /* SceneDelegate.swift */,
-				B8949FCA2BFA1A530069106C /* FirstVC.swift */,
+				B87E04452BFF18B300A6B6D0 /* SimpleCalculator */,
+				B87E04462BFF18CE00A6B6D0 /* BirthdayNoteTaker */,
 				B8949FA32BFA11700069106C /* Assets.xcassets */,
 				B8949FA52BFA11700069106C /* LaunchScreen.storyboard */,
 				B8949FA82BFA11700069106C /* Info.plist */,
