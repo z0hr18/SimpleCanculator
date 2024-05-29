@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B850322E2C073DA10015E0CC /* KennyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B850322D2C073DA10015E0CC /* KennyViewController.swift */; };
 		B8949F9B2BFA116F0069106C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8949F9A2BFA116F0069106C /* AppDelegate.swift */; };
 		B8949F9D2BFA116F0069106C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8949F9C2BFA116F0069106C /* SceneDelegate.swift */; };
 		B8949FA42BFA11700069106C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8949FA32BFA11700069106C /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B850322D2C073DA10015E0CC /* KennyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennyViewController.swift; sourceTree = "<group>"; };
 		B8949F972BFA116F0069106C /* SimpleCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8949F9A2BFA116F0069106C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8949F9C2BFA116F0069106C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,11 +84,12 @@
 			path = SimpleCalculator;
 			sourceTree = "<group>";
 		};
-		B87E04462BFF18CE00A6B6D0 /* BirthdayNoteTaker */ = {
+		B87E04462BFF18CE00A6B6D0 /* kennyGame */ = {
 			isa = PBXGroup;
 			children = (
+				B850322D2C073DA10015E0CC /* KennyViewController.swift */,
 			);
-			path = BirthdayNoteTaker;
+			path = kennyGame;
 			sourceTree = "<group>";
 		};
 		B8949F8E2BFA116F0069106C = {
@@ -115,7 +118,7 @@
 				B8949F9A2BFA116F0069106C /* AppDelegate.swift */,
 				B8949F9C2BFA116F0069106C /* SceneDelegate.swift */,
 				B87E04452BFF18B300A6B6D0 /* SimpleCalculator */,
-				B87E04462BFF18CE00A6B6D0 /* BirthdayNoteTaker */,
+				B87E04462BFF18CE00A6B6D0 /* kennyGame */,
 				B8949FA32BFA11700069106C /* Assets.xcassets */,
 				B8949FA52BFA11700069106C /* LaunchScreen.storyboard */,
 				B8949FA82BFA11700069106C /* Info.plist */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B850322E2C073DA10015E0CC /* KennyViewController.swift in Sources */,
 				B8949FCB2BFA1A530069106C /* FirstVC.swift in Sources */,
 				B8949F9B2BFA116F0069106C /* AppDelegate.swift in Sources */,
 				B8949F9D2BFA116F0069106C /* SceneDelegate.swift in Sources */,

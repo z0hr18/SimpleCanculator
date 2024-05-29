@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createSearchNavigationController() -> UINavigationController {
           let searchVC = FirstVC()
-         searchVC.title = "First"
+//         searchVC.title = "First"
          searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0) //tag tabbardaki barin indexidi. 0-ci searchVC
  //        let navController = UINavigationController(rootViewController: searchVC)
  //        searchVC.navigationController?.navigationBar.backgroundColor = .white
@@ -34,8 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
      }
      
     func createFavoriteNavigationController() -> UINavigationController {
-            let favoritesListVC = FavoriteListVC()
-            favoritesListVC.title = "Favorites"
+            let favoritesListVC = KennyViewController()
+//            favoritesListVC.title = "Favorites"
             favoritesListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
             
             return UINavigationController(rootViewController: favoritesListVC ) // burda yazanda 2 dene favoritelistVC kimi cixir. L yazilan Local variabledir. C ise class.
@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          let tabbar = UITabBarController()
          UITabBar.appearance().tintColor = .systemGreen
          tabbar.tabBar.backgroundColor = .white
-         tabbar.viewControllers = [createSearchNavigationController(), ]
+         tabbar.viewControllers = [createSearchNavigationController(), createFavoriteNavigationController() ]
          return tabbar
      }
      
