@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B850322E2C073DA10015E0CC /* KennyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B850322D2C073DA10015E0CC /* KennyViewController.swift */; };
+		B85032302C084B180015E0CC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B850322F2C084B180015E0CC /* MyViewController.swift */; };
 		B8949F9B2BFA116F0069106C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8949F9A2BFA116F0069106C /* AppDelegate.swift */; };
 		B8949F9D2BFA116F0069106C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8949F9C2BFA116F0069106C /* SceneDelegate.swift */; };
 		B8949FA42BFA11700069106C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8949FA32BFA11700069106C /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		B850322D2C073DA10015E0CC /* KennyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennyViewController.swift; sourceTree = "<group>"; };
+		B850322F2C084B180015E0CC /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		B8949F972BFA116F0069106C /* SimpleCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8949F9A2BFA116F0069106C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8949F9C2BFA116F0069106C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				B8949FA32BFA11700069106C /* Assets.xcassets */,
 				B8949FA52BFA11700069106C /* LaunchScreen.storyboard */,
 				B8949FA82BFA11700069106C /* Info.plist */,
+				B850322F2C084B180015E0CC /* MyViewController.swift */,
 			);
 			path = SimpleCalculator;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				B8949FCB2BFA1A530069106C /* FirstVC.swift in Sources */,
 				B8949F9B2BFA116F0069106C /* AppDelegate.swift in Sources */,
 				B8949F9D2BFA116F0069106C /* SceneDelegate.swift in Sources */,
+				B85032302C084B180015E0CC /* MyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
