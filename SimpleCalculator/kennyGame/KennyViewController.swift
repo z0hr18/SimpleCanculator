@@ -9,10 +9,10 @@ import UIKit
 import UIKit
 
 class KennyViewController: UIViewController {
-
+    
     private let timerLabel: UILabel = {
         let label = UILabel()
-        label.text = "30"
+        //        label.text = "30"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 30)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class KennyViewController: UIViewController {
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Score: 0"
+        //        label.text = "Score: 0"
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -120,6 +120,8 @@ class KennyViewController: UIViewController {
     var timer = Timer()
     var counter = 0
     var kennyArray = [UIImageView]()
+    var hideTimer = Timer()
+    var highScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,29 +151,67 @@ class KennyViewController: UIViewController {
         counter = 10
         timerLabel.text = "\(counter)"
         scoreLabel.text = "Score: \(score)"
-
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(hideKenny), userInfo: nil, repeats: true)
+        
+        hideKenny()
+    }
+    
+    @objc func hideKenny() {
+        //for loop kennyArray icindekileri tek tek kenny-e assign edir ve icindekileri hidden edir.
+        for kenny in kennyArray {
+            kenny.isHidden = true
+        }
+        
+        let random = Int(arc4random_uniform(UInt32(kennyArray.count - 1)))
+        kennyArray[random].isHidden = false
     }
     
     @objc func increaseScore() {
-       score = score + 1
+        score += 1
         scoreLabel.text = "Score: \(score)"
-    
+        
     }
     
     @objc func countDown() {
-       counter = counter - 1
-       timerLabel.text = "\(counter)"
+        counter -= 1
+        timerLabel.text = "\(counter)"
+        
         if counter == 0  {
             timer.invalidate() //timeri dayandirir yeni 0-a gelende dayansin
+            hideTimer.invalidate()
+            
+            //sonda butun kennyleri gorunmez elesin
+            for kenny in kennyArray {
+                kenny.isHidden = true
+            }
+            
+            
+            //HIGH SCORE
+            if self.score > self.highScore {
+                self.highScore = self.score
+                highScoreLabel.text = "High Score: \(highScore)"
+                UserDefaults.standard.object(forKey: <#T##String#>)
+            }
             
             //ALERT
             let alert = UIAlertController(title: "Zaman doldu -_-", message: "Yeniden oynamaq isteyirsen?", preferredStyle: UIAlertController.Style.alert)
             
             let okButton =  UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
             
-            let replayButton =  UIAlertAction(title: "rePLAY", style: UIAlertAction.Style.default) { UIAlertAction in
+            let replayButton =  UIAlertAction(title: "rePLAY", style: UIAlertAction.Style.default) { [self] UIAlertAction in
                 //replay function
+                
+                self.score = 0
+                self.scoreLabel.text = "Score: \(self.score)"
+                self.counter = 10
+                self.timerLabel.text = "\(self.counter)"
+                
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
+                hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hideKenny), userInfo: nil, repeats: true)
+                
+                
             }
             alert.addAction(okButton)
             alert.addAction(replayButton)
