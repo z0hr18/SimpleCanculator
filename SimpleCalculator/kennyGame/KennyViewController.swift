@@ -127,6 +127,19 @@ class KennyViewController: UIViewController {
         super.viewDidLoad()
         configureUİ()
         
+        
+        //highscore check
+        let storedHighScore = UserDefaults.standard.object(forKey: "highscore")
+        if storedHighScore == nil {
+            highScore = 0
+            highScoreLabel.text = ("Highscore: \(highScore)")
+        }
+        
+        if let newScore = storedHighScore as? Int {
+            highScore = newScore
+            highScoreLabel.text = ("Highscore: \(highScore)")
+        }
+        
         let recognizer1 = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
         let recognizer2 = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
         let recognizer3 = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
@@ -192,7 +205,7 @@ class KennyViewController: UIViewController {
             if self.score > self.highScore {
                 self.highScore = self.score
                 highScoreLabel.text = "High Score: \(highScore)"
-                UserDefaults.standard.object(forKey: <#T##String#>)
+                UserDefaults.standard.object(forKey: "highscore")
             }
             
             //ALERT
